@@ -1,0 +1,4 @@
+
+: "${GOPATH:="$WORKDIR"}"
+export GOPATH
+

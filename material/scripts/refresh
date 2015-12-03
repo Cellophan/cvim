@@ -1,0 +1,10 @@
+#!/bin/bash
+#Pull the repo for a newer version of this image
+
+if [ -z "${DOCKER_IMAGE:-}" ]; then
+  echo "No access to docker."
+  exit 1
+fi
+
+docker pull ${DOCKER_IMAGE}
+

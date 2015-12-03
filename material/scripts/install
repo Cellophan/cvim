@@ -1,0 +1,20 @@
+#!/bin/bash
+#Script to deploy payload/* on the machine.
+set -e
+
+readonly INSTALL_DIR=/installdir
+
+usage() {
+  echo "This script can only be used like this: docker run --rm --entrypoint install -v /usr/local/bin:${INSTALL_DIR} cell/cvim"
+}
+
+if [ ! -d ${INSTALL_DIR} -o "root" != "$(whoami)" ]; then
+  usage
+  exit 1
+fi
+
+cp /opt/payload/cvim ${INSTALL_DIR}/
+chmod a+x ${INSTALL_DIR}/cvim
+
+echo "Installer in place, now you can use the command cvim."
+
