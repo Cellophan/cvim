@@ -3,7 +3,8 @@ syn on
 set hlsearch
 set background=light
 set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
-autocmd Filetype python setlocal et ts=4 sts=4 sw=4
+set ts=4 sts=4 sw=4
+"autocmd Filetype python setlocal et ts=4 sts=4 sw=4
 
 let mapleader=","
 
@@ -14,9 +15,6 @@ filetype off " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
@@ -140,9 +138,10 @@ let g:tagbar_type_go = {
 "NERDTree
 nmap <F2> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrows = 1
-"let g:NERDTreeDirArrowExpandable = '▸'
-"let g:NERDTreeDirArrowCollapsible = '▾'
+" Open NERDTree if vim is called without files
 autocmd VimEnter * if !argc() | NERDTree | endif
+" Close NERDTree if it's the last window buffer opened
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "Syntastic
 let g:syntastic_always_populate_loc_list = 1
