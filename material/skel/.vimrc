@@ -97,6 +97,7 @@ let &colorcolumn="80,".join(range(130,999),",")
 "Plugin customizations
 "neocomplete.vim
 let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
 
 " vim-airline
 set laststatus=2
@@ -154,6 +155,9 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
-"Bundle 'tomasr/molokai'
+"Bundle 'molokai'
 let g:rehash256 = 1
-"colo molokai
+
+
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
