@@ -3,6 +3,7 @@ syn on
 set hlsearch
 set background=light
 set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
+autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit :edit!)."
 set ts=4 sts=4 sw=4
 "autocmd Filetype python setlocal et ts=4 sts=4 sw=4
 
