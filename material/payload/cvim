@@ -4,6 +4,6 @@
 #	LOCAL_GIT="-v ${HOME}/.git:${HOME}/.git"
 #fi
 
-eval $(docker run --rm -ti cell/cvim cmd) vim $@
+eval $(docker run --rm -ti cell/cvim cmd) $@
 
 

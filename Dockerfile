@@ -5,6 +5,7 @@ ADD material/scripts    /usr/local/bin/
 ADD material/payload    /opt/payload/
 ADD material/profile.d  /etc/profile.d/
 ADD material/skel       /etc/skel/
+ENV DEFAULT_CMD=vim
 
 #go
 RUN apt-get update &&\
