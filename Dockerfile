@@ -14,11 +14,13 @@ RUN apt-get update &&\
     wget -O /tmp/go.tar.gz --quiet https://storage.googleapis.com/golang/go1.5.1.linux-amd64.tar.gz &&\
     tar -C /usr/local -xzf /tmp/go.tar.gz &&\
     rm /tmp/go.tar.gz
-ENV GOBIN=/usr/local/go/bin
-ENV PATH=$PATH:$GOBIN
 
 #Go tools
-RUN mkdir /tmp/go && export GOPATH=/tmp/go &&\
+RUN mkdir /tmp/go \
+	&& export \
+		GOPATH=/tmp/go \
+		GOBIN=/usr/local/go/bin \
+		PATH=${PATH}:/usr/local/go/bin &&\
     echo godoc		&& go get golang.org/x/tools/cmd/godoc &&\
     echo goimports	&& go get golang.org/x/tools/cmd/goimports &&\
     echo oracle		&& go get golang.org/x/tools/cmd/oracle &&\
