@@ -76,6 +76,8 @@ let g:go_fmt_command = "goimports"
 " Inspired from https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 nmap <C-Right> :bnext<CR>
 nmap <C-Left> :bprevious<CR>
+nmap <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nmap <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 "  Cherypicked from https://github.com/farazdagi/vim-go-ide/blob/master/vimrc/basic.vim
 "    Ignore case when searching
 set ignorecase
