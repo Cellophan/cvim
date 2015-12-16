@@ -2,15 +2,15 @@
 
 echo "A lot of options are needed to start this image.
 
-  Default options for user are provided by: \"docker run --rm cell/debsandbox cmd\"
+  Default options for user are provided by: \"docker run --rm cell/ cmd\"
   It s recommanded to use the start script provided at the root of the repo. You can install it by using:
-    docker run --rm --entrypoint install -v /usr/local/bin:/installdir cell/debsandbox
+    docker run --rm --entrypoint install -v /usr/local/bin:/installdir cell/cvim
 
   Options and Tools:
     $(find /usr/local/bin/ -maxdepth 1 -printf "%p " | sed 's/[^ ]*\/\([^/]*\) /\1 /g')
 
   Packages:
-     $(cat /var/log/apt/history.log | grep "apt-get install" | sed 's/^.*-qy //' | awk '{ printf("%s ", $0);}')
+    $(cat /var/log/apt/history.log | grep "apt-get install -qy" | sed 's/^.*-qy //' | awk '{ printf("%s ", $0);}')
 
   Docker options:
     For using your user inside the container: -e USER -e UID=\$(id --user) -e GID=\$(id --group)
@@ -18,8 +18,14 @@ echo "A lot of options are needed to start this image.
     For SSH: -v \$HOME/.ssh:\$HOME/.ssh -v \$SSH_AUTH_SOCK:\$SSH_AUTH_SOCK -e SSH_AUTH_SOCK
     For git settings: -v \$HOME/.gitconfig:\$HOME/.gitconfig
     For using docker: -v \$(which docker):\$(which docker) -v /var/run/docker.sock:/var/run/docker.sock
-    For allowing X applications: -e XAUTHORITY -v \$XAUTHORITY:\$XAUTHORITY -e DISPLAY=/unix\$DISPLAY -e XSOCK -v /tmp/.X11-unix:/tmp/.X11-unix
     For changing the default shell (if there s no command) -e SHELL=...
     For debug: -e DEBUG=1
+
+    The options can be added after cmd in the script in /usr/local/bin/cmd.
+    For example the script can then become:
+        eval $(docker run --rm -ti registry.neofonie.de/asp-toolbox:latest cmd \
+            -v /data/Repos/asp/svn:/data/Repos/asp/svn -e ASP_REPO=/data/Repos/asp/svn \
+            -e LOGFILE=/asp/asp.log -v /tmp/asp.log:/asp/asp.log \
+        )
 "
 
