@@ -161,5 +161,5 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 let g:rehash256 = 1
 
 
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
+"Plugin 'godlygeek/tabular'
+"Plugin 'plasticboy/vim-markdown'
