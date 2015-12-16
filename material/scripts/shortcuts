@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cat /etc/skel/.vimrc | grep '[^_]map '
+
