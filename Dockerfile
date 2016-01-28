@@ -1,5 +1,6 @@
 FROM cell/debsandbox
 MAINTAINER Cell <maintainer.docker.cell@outer.systems>
+ENV DOCKER_IMAGE="cell/cvim"
 
 ADD material/scripts    /usr/local/bin/
 ADD material/payload    /opt/payload/
@@ -37,5 +38,6 @@ RUN apt-get update &&\
     DEBIAN_FRONTEND=noninteractive apt-get install -qy vim-nox git exuberant-ctags &&\
     apt-get clean -y && rm -rf /var/lib/apt/lists/* &&\
     git clone --depth 1 https://github.com/gmarik/Vundle.vim.git /etc/skel/.vim/bundle/Vundle.vim &&\
-    ln -s /etc/skel/.vim /root/ && vim -u /etc/skel/.vimrc +PluginInstall +qall
+    ln -s /etc/skel/.vim /root/ &&\
+	vim -u /etc/skel/.vimrc +PluginInstall +qall
 
