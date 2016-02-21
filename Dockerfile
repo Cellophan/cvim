@@ -9,10 +9,11 @@ ADD material/skel       /etc/skel/
 ENV DEFAULT_CMD=vim
 
 #go
+ENV GO_VERSION 1.6
 RUN apt-get update &&\
     DEBIAN_FRONTEND=noninteractive apt-get install -qy wget &&\
     apt-get clean -y && rm -rf /var/lib/apt/lists/* &&\
-    wget -O /tmp/go.tar.gz --quiet https://storage.googleapis.com/golang/go1.5.1.linux-amd64.tar.gz &&\
+    wget -O /tmp/go.tar.gz --quiet https://storage.googleapis.com/golang/go${GO_VERSION}.linux-amd64.tar.gz &&\
     tar -C /usr/local -xzf /tmp/go.tar.gz &&\
     rm /tmp/go.tar.gz
 
