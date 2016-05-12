@@ -94,7 +94,7 @@ autocmd BufWinLeave * call clearmatches()
 "http://codeyarns.com/2011/07/29/vim-set-color-of-colorcolumn/
 ":help ctermbg
 highlight ColorColumn ctermbg=7
-let &colorcolumn="80,".join(range(130,999),",")
+let &colorcolumn="80,".join(range(130,131),",")
 
 "Plugin customizations
 "neocomplete.vim
