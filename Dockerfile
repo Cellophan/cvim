@@ -25,7 +25,7 @@ RUN mkdir /tmp/go \
 		PATH=${PATH}:/usr/local/go/bin &&\
     echo godoc		&& go get golang.org/x/tools/cmd/godoc &&\
     echo goimports	&& go get golang.org/x/tools/cmd/goimports &&\
-    echo oracle		&& go get golang.org/x/tools/cmd/oracle &&\
+#    echo oracle		&& go get golang.org/x/tools/cmd/oracle &&\
     echo gorename	&& go get golang.org/x/tools/cmd/gorename &&\
     echo gocode 	&& go get github.com/nsf/gocode &&\
     echo godef		&& go get github.com/rogpeppe/godef &&\
