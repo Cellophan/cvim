@@ -10,7 +10,7 @@ ADD material/skel/vimrc /etc/skel/.vimrc
 ENV DEFAULT_CMD=vim
 
 #go
-ENV GO_VERSION 1.6
+ENV GO_VERSION 1.7.3
 RUN apt-get update &&\
     DEBIAN_FRONTEND=noninteractive apt-get install -qy wget &&\
     apt-get clean -y && rm -rf /var/lib/apt/lists/* &&\
