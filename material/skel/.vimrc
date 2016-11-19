@@ -79,6 +79,9 @@ nmap <C-Right> :bnext<CR>
 nmap <C-Left> :bprevious<CR>
 nmap <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nmap <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+"  Resize: http://vim.wikia.com/wiki/Resize_splits_more_quickly
+nmap <Leader>* :exe "resize " . (heighwidth(0) * 3/2)<CR>
+nmap <Leader>/ :exe "resize " . (heighwidth(0) * 2/3)<CR>
 "  Cherypicked from https://github.com/farazdagi/vim-go-ide/blob/master/vimrc/basic.vim
 "    Ignore case when searching
 set ignorecase
@@ -90,11 +93,21 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+"  Mouse toggle
+nnoremap <leader>m :call ToggleMouse()<cr>
+function! ToggleMouse()
+	if &mouse == ""
+		setlocal mouse=a
+	else
+		setlocal mouse=
+	endif
+endfunction
 
 "http://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
 "http://codeyarns.com/2011/07/29/vim-set-color-of-colorcolumn/
 ":help ctermbg
-highlight ColorColumn ctermbg=7
+"highlight ColorColumn ctermbg=7
+highlight ColorColumn ctermbg=4
 let &colorcolumn="80,".join(range(130,131),",")
 
 "Plugin customizations
