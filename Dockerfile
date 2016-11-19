@@ -2,6 +2,7 @@ FROM cell/debsandbox
 MAINTAINER Cell <maintainer.docker.cell@outer.systems>
 ENV DOCKER_IMAGE="cell/cvim"
 
+#Material
 ADD material/scripts    /usr/local/bin/
 ADD material/payload    /opt/payload/
 ADD material/profile.d  /etc/profile.d/
