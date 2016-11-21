@@ -102,6 +102,8 @@ function! ToggleMouse()
 		setlocal mouse=
 	endif
 endfunction
+"  Hightlight toggle
+nnoremap <F4> :noh<CR>
 
 "http://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
 "http://codeyarns.com/2011/07/29/vim-set-color-of-colorcolumn/
