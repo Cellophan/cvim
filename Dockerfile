@@ -6,7 +6,7 @@ ENV DOCKER_IMAGE="cell/cvim"
 ADD material/scripts    /usr/local/bin/
 ADD material/payload    /opt/payload/
 ADD material/profile.d  /etc/profile.d/
-ADD material/skel/vimrc /etc/skel/.vimrc
+ADD material/vimrc /etc/skel/.vimrc
 ENV DEFAULT_CMD=vim
 
 #go
