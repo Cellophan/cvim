@@ -120,11 +120,13 @@ let g:neocomplete#enable_smart_case = 1
 " vim-airline
 set laststatus=2
 let g:bufferline_echo = 0
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 "    Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 "    Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#fnamemod = ':t'
+""   Activate powerline symbols
+let g:airline_powerline_fonts = 1
 
 " tagbar
 nmap <F3> :TagbarToggle<CR>
@@ -179,3 +181,4 @@ let g:rehash256 = 1
 
 "Plugin 'godlygeek/tabular'
 "Plugin 'plasticboy/vim-markdown'
+"
