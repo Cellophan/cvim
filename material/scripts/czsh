@@ -1,0 +1,4 @@
+#!/bin/bash
+
+eval $(docker run --rm -ti cell/czsh cmd -e VIRTUAL_ENV=cvim) $@
+

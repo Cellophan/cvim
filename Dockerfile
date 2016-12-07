@@ -42,8 +42,3 @@ RUN apt-get update &&\
     ln -s /etc/skel/.vim /root/ &&\
 	vim -u /etc/skel/.vimrc +PluginInstall +qall
 
-#deploy czsh launcher
-RUN	git clone https://github.com/Cellophan/czsh /tmp/scripts &&\
-	cp -vrp /tmp/scripts/material/payload/install/* /usr/local/bin/ &&\
-	rm -rf /tmp/scripts
-
