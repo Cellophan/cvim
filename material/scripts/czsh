@@ -1,4 +1,0 @@
-#!/bin/bash
-
-eval $(docker run --rm -ti plic/czsh cmd) $@
-

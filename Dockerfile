@@ -26,7 +26,6 @@ RUN mkdir /tmp/go \
 		PATH=${PATH}:/usr/local/go/bin &&\
     echo godoc		&& go get golang.org/x/tools/cmd/godoc &&\
     echo goimports	&& go get golang.org/x/tools/cmd/goimports &&\
-#    echo oracle		&& go get golang.org/x/tools/cmd/oracle &&\
     echo gorename	&& go get golang.org/x/tools/cmd/gorename &&\
     echo gocode 	&& go get github.com/nsf/gocode &&\
     echo godef		&& go get github.com/rogpeppe/godef &&\
@@ -42,4 +41,9 @@ RUN apt-get update &&\
     git clone --depth 1 https://github.com/gmarik/Vundle.vim.git /etc/skel/.vim/bundle/Vundle.vim &&\
     ln -s /etc/skel/.vim /root/ &&\
 	vim -u /etc/skel/.vimrc +PluginInstall +qall
+
+#deploy czsh launcher
+RUN	git clone https://github.com/Cellophan/czsh /tmp/scripts &&\
+	cp -vrp /tmp/scripts/material/payload/install/* /usr/local/bin/ &&\
+	rm -rf /tmp/scripts
 
