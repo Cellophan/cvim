@@ -1,8 +1,8 @@
 "inspired from https://github.com/mbrt/go-docker-dev/blob/master/fs/home/dev/.vimrc
 syn on
 set hlsearch
-"set background=light
-set background=dark
+set background=light
+"set background=dark
 set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
 autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit :edit!)."
 set ts=4 sts=4 sw=4
