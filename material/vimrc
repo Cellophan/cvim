@@ -130,7 +130,7 @@ endfunction
 "http://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
 "http://codeyarns.com/2011/07/29/vim-set-color-of-colorcolumn/
 ":help ctermbg
-highlight ColorColumn ctermbg=4
+highlight ColorColumn ctermbg=7
 let &colorcolumn="80,".join(range(130,131),",")
 
 "Plugin customizations
