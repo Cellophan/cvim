@@ -16,7 +16,7 @@ RUN go get github.com/kisielk/errcheck
 RUN go get github.com/jstemmer/gotags
 
 
-FROM cell/debsandbox
+FROM cell/playground
 ENV DOCKER_IMAGE="cell/cvim"
 ENV DEFAULT_CMD=vim
 
