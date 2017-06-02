@@ -1,9 +1,3 @@
 #!/bin/bash
-
-#if [ -e "~/.git" ]; then
-#	LOCAL_GIT="-v ${HOME}/.git:${HOME}/.git"
-#fi
-
-eval $(docker run --rm -ti cell/cvim cmd) $@
-
+eval $(docker run --rm --entrypoint cmd cell/cvim) $@
 
