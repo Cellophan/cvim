@@ -1,4 +1,4 @@
-FROM debian as golang
+FROM cell/playground as golang
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -qy wget git ca-certificates
