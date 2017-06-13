@@ -1,4 +1,4 @@
-FROM cell/playground as golang
+FROM ubuntu as golang
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -qy wget git ca-certificates
