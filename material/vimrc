@@ -5,7 +5,7 @@ set background=light
 "set background=dark
 set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
 autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit :edit!)."
-set ts=4 sts=4 sw=4
+set ts=2 sts=2 sw=2 expandtab
 "autocmd Filetype python setlocal et ts=4 sts=4 sw=4
 
 let mapleader=","
@@ -31,6 +31,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
+
+Plugin 'ConradIrwin/vim-bracketed-paste'
 
 " All of your Plugins must be added before the following line
 call vundle#end() " required
@@ -96,11 +98,11 @@ autocmd BufWinLeave * call clearmatches()
 "  Mouse toggle
 nnoremap <leader>m :call ToggleMouse()<cr>
 function! ToggleMouse()
-	if &mouse == ""
-		setlocal mouse=a
-	else
-		setlocal mouse=
-	endif
+  if &mouse == ""
+    setlocal mouse=a
+  else
+    setlocal mouse=
+  endif
 endfunction
 "  Hightlight toggle
 nnoremap <F4> :noh<CR>
@@ -109,22 +111,22 @@ nnoremap <F5> :! czsh<CR>
 "  From http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 function! s:RunShellCommand(cmdline)
-	echo a:cmdline
-	let expanded_cmdline = a:cmdline
-	for part in split(a:cmdline, ' ')
-		if part[0] =~ '\v[%#<]'
-			let expanded_part = fnameescape(expand(part))
-			let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
-		endif
-	endfor
-	botright new
-	setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
-	call setline(1, 'Entered:    ' . a:cmdline)
-	call setline(2, 'Expanded:  ' .expanded_cmdline)
-	call setline(3,substitute(getline(2),'.','=','g'))
-	execute '$read !'. expanded_cmdline
-	setlocal nomodifiable
-	1
+  echo a:cmdline
+  let expanded_cmdline = a:cmdline
+  for part in split(a:cmdline, ' ')
+    if part[0] =~ '\v[%#<]'
+      let expanded_part = fnameescape(expand(part))
+      let expanded_cmdline = substitute(expanded_cmdline, part, expanded_part, '')
+    endif
+  endfor
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1, 'Entered:    ' . a:cmdline)
+  call setline(2, 'Expanded:  ' .expanded_cmdline)
+  call setline(3,substitute(getline(2),'.','=','g'))
+  execute '$read !'. expanded_cmdline
+  setlocal nomodifiable
+  1
 endfunction
 
 "http://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
