@@ -34,6 +34,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'editorconfig/editorconfig-vim'
 
+"See http://gorefactor.org/starting.html
+Plugin 'godoctor/godoctor.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end() " required
 filetype plugin indent on " required
