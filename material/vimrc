@@ -2,7 +2,6 @@
 syn on
 set hlsearch
 set background=light
-"set background=dark
 set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
 autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit :edit!)."
 set ts=2 sts=2 sw=2 expandtab
@@ -24,7 +23,6 @@ Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
 Plugin 'fatih/molokai'
 Plugin 'bling/vim-airline'
-"Plugin 'tpope/vim-fugitive'
 Plugin 'shougo/neocomplete.vim'
 
 Plugin 'scrooloose/nerdtree'
@@ -33,6 +31,10 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'editorconfig/editorconfig-vim'
+
+" based on https://statico.github.io/vim3.html
+Plugin 'mileszs/ack.vim'
+Plugin 'junegunn/fzf.vim'
 
 "See http://gorefactor.org/starting.html
 Plugin 'godoctor/godoctor.vim'
@@ -139,7 +141,7 @@ highlight ColorColumn ctermbg=7
 let &colorcolumn="80,".join(range(130,131),",")
 
 "Plugin customizations
-"neocomplete.vim
+" neocomplete.vim
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 
@@ -187,7 +189,7 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
     \ }
 
-"NERDTree
+" NERDTree
 nmap <F2> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrows = 1
 " Open NERDTree if vim is called without files
@@ -195,7 +197,7 @@ autocmd VimEnter * if !argc() | NERDTree | endif
 " Close NERDTree if it's the last window buffer opened
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-"Syntastic
+" Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -209,4 +211,10 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 "Plugin 'godlygeek/tabular'
 "Plugin 'plasticboy/vim-markdown'
+
+" fzf
+" ack
+let g:ackprg = 'ag --vimgrep'
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
 
