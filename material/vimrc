@@ -214,7 +214,7 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " fzf
 " ack
-let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'ag --nocolor --vimgrep'
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 
