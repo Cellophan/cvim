@@ -1,8 +1,8 @@
-FROM ubuntu as golang
+FROM ubuntu:rolling as golang
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -qy wget git ca-certificates
-RUN wget -O /tmp/go.tar.gz --quiet https://storage.googleapis.com/golang/go1.8.3.linux-amd64.tar.gz
+RUN wget -O /tmp/go.tar.gz --quiet https://storage.googleapis.com/golang/go1.9.2.linux-amd64.tar.gz
 RUN tar -C /usr/local -xzf /tmp/go.tar.gz
 
 ENV GOPATH=/tmp/go GOBIN=/usr/local/go/bin PATH=${PATH}:/usr/local/go/bin
