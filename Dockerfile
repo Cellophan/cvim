@@ -7,7 +7,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -qy golang-go
 ENV GOPATH=/tmp/go GOBIN=/usr/local/go/bin PATH=${PATH}:/usr/local/go/bin
 RUN go get -u golang.org/x/tools/cmd/godoc
 RUN go get -u golang.org/x/tools/cmd/goimports
-RUN go get -u golang.org/x/tools/cmd/goren:%s/\s\+$:%s/\s\+$////ame
+RUN go get -u golang.org/x/tools/cmd/gorename
 
 RUN go get -u github.com/nsf/gocode
 RUN go get -u github.com/rogpeppe/godef
