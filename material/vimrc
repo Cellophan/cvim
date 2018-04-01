@@ -72,6 +72,7 @@ au FileType go nmap <Leader>s <Plug>(go-implements)
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap <Leader>e <Plug>(go-rename)
 au FileType go nmap <Leader>o :GoInstall -x<CR>
+au FileType go nmap <F6> :GoDef<CR>
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
