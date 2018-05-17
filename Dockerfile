@@ -1,8 +1,8 @@
 FROM ubuntu:rolling as golang
 
-RUN apt update
-RUN DEBIAN_FRONTEND=noninteractive apt install --no-install-recommends -qy wget git ca-certificates
-RUN DEBIAN_FRONTEND=noninteractive apt install -qy golang-go
+RUN apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -qy wget git ca-certificates
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -qy golang-go
 
 ENV GOPATH=/tmp/go GOBIN=/usr/local/go/bin PATH=${PATH}:/usr/local/go/bin
 RUN go get -u golang.org/x/tools/cmd/godoc
@@ -25,7 +25,7 @@ ENV DEFAULT_CMD=vim
 
 #go
 COPY --from=golang /usr/local/go /usr/local/go
-RUN apt update &&\
+RUN apt-get update &&\
   DEBIAN_FRONTEND=noninteractive apt install -qy golang-go &&\
   apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
