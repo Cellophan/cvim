@@ -39,6 +39,8 @@ Plugin 'junegunn/fzf.vim'
 "See http://gorefactor.org/starting.html
 Plugin 'godoctor/godoctor.vim'
 
+Plugin 'z0mbix/vim-shfmt'
+
 " All of your Plugins must be added before the following line
 call vundle#end() " required
 filetype plugin indent on " required
@@ -219,3 +221,6 @@ let g:ackprg = 'ag --nocolor --vimgrep'
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 
+" vim-shfmt
+let g:shfmt_extra_args = '-i 2'
+let g:shfmt_fmt_on_save = 1
