@@ -11,7 +11,7 @@ RUN go get -u golang.org/x/tools/cmd/gorename
 
 RUN go get -u github.com/nsf/gocode
 RUN go get -u github.com/rogpeppe/godef
-RUN go get -u github.com/golang/lint/golint
+#RUN go get -u github.com/golang/lint/golint
 RUN go get -u github.com/kisielk/errcheck
 RUN go get -u github.com/jstemmer/gotags
 RUN go get -u github.com/golang/dep/cmd/dep
