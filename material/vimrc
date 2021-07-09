@@ -224,3 +224,15 @@ nnoremap <Leader>a :Ack!<Space>
 " vim-shfmt
 let g:shfmt_extra_args = '-i 2'
 "let g:shfmt_fmt_on_save = 1
+
+" Folding!
+" Based on:
+"   * https://www.linux.com/training-tutorials/vim-tips-folding-fun/
+"   * http://vimdoc.sourceforge.net/htmldoc/fold.html#za
+"   * https://unix.stackexchange.com/questions/141097/how-to-enable-and-use-code-folding-in-vim
+"   * https://web.archive.org/web/20161016081350/http://smartic.us/2009/04/06/code-folding-in-vim/
+" Notes: Then you can toggle folding with za. You can fold everything with zM and unfold everything with zR. zm and zr can be used to get those folds just right. Always remember the almighty help file at “help :folding” if you get stuck.
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
