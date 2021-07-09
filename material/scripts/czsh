@@ -1,3 +1,3 @@
 #!/bin/bash
-eval $(docker run --rm --entrypoint cmd cell/czsh -e VIRTUAL_ENV=cvim) $@
+eval $(docker run --rm --entrypoint cmd cell/czsh -e CONTAINER_PROMPT=cvim) $@
 
