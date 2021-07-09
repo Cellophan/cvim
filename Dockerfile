@@ -1,4 +1,4 @@
-FROM ubuntu:rolling as golang
+FROM ubuntu:latest as golang
 
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -qy wget git ca-certificates
