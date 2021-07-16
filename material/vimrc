@@ -234,5 +234,7 @@ let g:shfmt_extra_args = '-i 2'
 " Notes: Then you can toggle folding with za. You can fold everything with zM and unfold everything with zR. zm and zr can be used to get those folds just right. Always remember the almighty help file at “help :folding” if you get stuck.
 set foldmethod=indent
 set foldnestmax=10
-set nofoldenable
+"set nofoldenable
 set foldlevel=2
+set foldlevel=20
+set foldlevel=20
