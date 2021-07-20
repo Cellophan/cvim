@@ -4,7 +4,7 @@ ENV DEFAULT_CMD=vim
 
 #go
 RUN apt-get update &&\
-  DEBIAN_FRONTEND=noninteractive apt install -qy golang-go &&\
+  DEBIAN_FRONTEND=noninteractive apt install -qy --no-install-recommends golang-go &&\
   apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 #vim from vim-go
