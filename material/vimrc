@@ -238,6 +238,4 @@ let g:shfmt_extra_args = '-i 2'
 set foldmethod=indent
 set foldnestmax=10
 "set nofoldenable
-set foldlevel=2
-set foldlevel=20
 set foldlevel=20
