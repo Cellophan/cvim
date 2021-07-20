@@ -6,6 +6,8 @@ set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
 autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit :edit!)."
 set ts=2 sts=2 sw=2 expandtab
 autocmd Filetype python setlocal set ts=4 sts=4 sw=4
+"autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 
 let mapleader=","
 
@@ -40,6 +42,9 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'godoctor/godoctor.vim'
 
 Plugin 'z0mbix/vim-shfmt'
+
+Plugin 'yggdroot/indentLine'
+let g:indentLine_char = '⦙'
 
 " Collaborative editing with neovim
 "Plugin 'jbyuti/instant.nvim'
