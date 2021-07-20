@@ -233,6 +233,9 @@ nnoremap <Leader>a :Ack!<Space>
 let g:shfmt_extra_args = '-i 2'
 "let g:shfmt_fmt_on_save = 1
 
+" Plugin 'yggdroot/indentLine'
+let g:indentLine_char = '⦙'
+
 " Folding!
 " Based on:
 "   * https://www.linux.com/training-tutorials/vim-tips-folding-fun/
