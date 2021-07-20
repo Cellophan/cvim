@@ -41,6 +41,9 @@ Plugin 'godoctor/godoctor.vim'
 
 Plugin 'z0mbix/vim-shfmt'
 
+" Collaborative editing with neovim
+"Plugin 'jbyuti/instant.nvim'
+
 " All of your Plugins must be added before the following line
 call vundle#end() " required
 filetype plugin indent on " required
