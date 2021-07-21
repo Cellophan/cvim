@@ -8,6 +8,7 @@ set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 " FileType list found in filetype.vim
 autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4
 autocmd Filetype markdown setlocal tabstop=4 softtabstop=4 shiftwidth=4
+"autocmd Filetype markdown setlocal spell spelllang=en_us
 
 
 let mapleader=","
@@ -126,6 +127,16 @@ endfunction
 nnoremap <F4> :noh<CR>
 "  my Shell (but can't use set shell because this would break the plugins)
 nnoremap <F5> :! czsh<CR>
+"  spell
+nnoremap <F6> :call ToggleSpell()<CR>
+function! ToggleSpell()
+  set spell!
+  if &spell
+    echo "Spellcheck ON"
+  else
+    echo "Spellcheck OFF"
+  endif
+endfunction
 "  From http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 function! s:RunShellCommand(cmdline)
