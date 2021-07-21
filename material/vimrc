@@ -45,8 +45,6 @@ Plugin 'godoctor/godoctor.vim'
 
 Plugin 'z0mbix/vim-shfmt'
 
-Plugin 'yggdroot/indentLine'
-
 Plugin 'dense-analysis/ale'
 
 " Collaborative editing with neovim
@@ -245,9 +243,6 @@ nnoremap <Leader>a :Ack!<Space>
 " vim-shfmt
 let g:shfmt_extra_args = '-i 2'
 "let g:shfmt_fmt_on_save = 1
-
-" Plugin 'yggdroot/indentLine'
-let g:indentLine_char = '⦙'
 
 " Plugin 'dense-analysis/ale'
 " https://www.arthurkoziel.com/setting-up-vim-for-yaml/
