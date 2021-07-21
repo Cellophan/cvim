@@ -5,6 +5,7 @@ ENV DEFAULT_CMD=vim
 #go
 RUN apt-get update &&\
   DEBIAN_FRONTEND=noninteractive apt install -qy --no-install-recommends golang-go &&\
+  DEBIAN_FRONTEND=noninteractive apt install -qy --no-install-recommends python3 python3-pip &&\
   apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 #vim from vim-go
@@ -18,7 +19,10 @@ RUN apt-get update &&\
   rm -rf /etc/skel/.vim/bundle/Vundle.vim/.git &&\
   ln -s /etc/skel/.vim /root/ &&\
   vim -u /etc/skel/.vimrc +PluginInstall +qall &&\
-  GOBIN=/usr/local/bin vim -u /etc/skel/.vimrc +GoInstallBinaries +qall
+  GOBIN=/usr/local/bin vim -u /etc/skel/.vimrc +GoInstallBinaries +qall &&\
+  rm -rvf /tmp/*
+RUN pip install --no-cache --system yamllint &&\
+  rm -rvf /tmp/*
 
 #Material
 COPY material/scripts    /usr/local/bin/
