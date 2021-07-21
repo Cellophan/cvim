@@ -45,7 +45,8 @@ Plugin 'godoctor/godoctor.vim'
 Plugin 'z0mbix/vim-shfmt'
 
 Plugin 'yggdroot/indentLine'
-let g:indentLine_char = '⦙'
+
+Plugin 'dense-analysis/ale'
 
 " Collaborative editing with neovim
 "Plugin 'jbyuti/instant.nvim'
@@ -236,6 +237,14 @@ let g:shfmt_extra_args = '-i 2'
 
 " Plugin 'yggdroot/indentLine'
 let g:indentLine_char = '⦙'
+
+" Plugin 'dense-analysis/ale'
+" https://www.arthurkoziel.com/setting-up-vim-for-yaml/
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+let g:ale_lint_on_text_changed = 'never'
+
 
 " Folding!
 " Based on:
