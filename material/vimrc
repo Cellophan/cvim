@@ -47,6 +47,10 @@ Plugin 'z0mbix/vim-shfmt'
 
 Plugin 'dense-analysis/ale'
 
+" Plugin 'puremourning/vimspector'
+" let g:vimspector_enable_mappings='HUMAN'
+
+
 " Collaborative editing with neovim
 "Plugin 'jbyuti/instant.nvim'
 
@@ -234,8 +238,8 @@ let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 "Plugin 'godlygeek/tabular'
 "Plugin 'plasticboy/vim-markdown'
 
-" fzf
-" ack
+" Plugin 'mileszs/ack.vim'
+" Plugin 'junegunn/fzf.vim'
 let g:ackprg = 'ag --nocolor --vimgrep'
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
@@ -250,7 +254,6 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_sign_error = '✘'
 let g:ale_sign_warning = '⚠'
 let g:ale_lint_on_text_changed = 'never'
-
 
 " Folding!
 " Based on:
