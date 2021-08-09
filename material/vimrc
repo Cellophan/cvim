@@ -126,7 +126,8 @@ endfunction
 "  Hightlight toggle
 nnoremap <F4> :noh<CR>
 "  my Shell (but can't use set shell because this would break the plugins)
-nnoremap <F5> :! czsh<CR>
+" nnoremap <F5> :! czsh<CR>
+nnoremap <F5> :term czsh<CR>
 "  spell
 nnoremap <F6> :call ToggleSpell()<CR>
 function! ToggleSpell()
