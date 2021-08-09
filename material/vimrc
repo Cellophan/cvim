@@ -4,11 +4,9 @@ set hlsearch
 set background=light
 set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
 autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit :edit!)."
-set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 " FileType list found in filetype.vim
-autocmd Filetype python setlocal tabstop=4 softtabstop=4 shiftwidth=4
-autocmd Filetype markdown setlocal tabstop=4 softtabstop=4 shiftwidth=4
-"autocmd Filetype markdown setlocal spell spelllang=en_us
+autocmd Filetype yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 
 let mapleader=","
@@ -23,16 +21,16 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'fatih/vim-go'
+" Plugin 'fatih/vim-go'
 Plugin 'majutsushi/tagbar'
-Plugin 'fatih/molokai'
+" Plugin 'fatih/molokai'
 Plugin 'bling/vim-airline'
 Plugin 'shougo/neocomplete.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'editorconfig/editorconfig-vim'
 
@@ -41,9 +39,9 @@ Plugin 'mileszs/ack.vim'
 Plugin 'junegunn/fzf.vim'
 
 "See http://gorefactor.org/starting.html
-Plugin 'godoctor/godoctor.vim'
+" Plugin 'godoctor/godoctor.vim'
 
-Plugin 'z0mbix/vim-shfmt'
+" Plugin 'z0mbix/vim-shfmt'
 
 Plugin 'dense-analysis/ale'
 
@@ -73,28 +71,28 @@ filetype plugin indent on " required
 
 " vim-go
 " :help vim-go
-au FileType go nmap <leader>r <Plug>(go-run)
-au FileType go nmap <leader>b <Plug>(go-build)
-au FileType go nmap <leader>t <Plug>(go-test)
-au FileType go nmap <leader>c <Plug>(go-coverage)
-au FileType go nmap <Leader>ds <Plug>(go-def-split)
-au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
-au FileType go nmap <Leader>dt <Plug>(go-def-tab)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
-au FileType go nmap <Leader>s <Plug>(go-implements)
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>e <Plug>(go-rename)
-au FileType go nmap <Leader>o :GoInstall -x<CR>
-au FileType go nmap <F6> :GoDef<CR>
+"au FileType go nmap <leader>r <Plug>(go-run)
+"au FileType go nmap <leader>b <Plug>(go-build)
+"au FileType go nmap <leader>t <Plug>(go-test)
+"au FileType go nmap <leader>c <Plug>(go-coverage)
+"au FileType go nmap <Leader>ds <Plug>(go-def-split)
+"au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+"au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+"au FileType go nmap <Leader>gd <Plug>(go-doc)
+"au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+"au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+"au FileType go nmap <Leader>s <Plug>(go-implements)
+"au FileType go nmap <Leader>i <Plug>(go-info)
+"au FileType go nmap <Leader>e <Plug>(go-rename)
+"au FileType go nmap <Leader>o :GoInstall -x<CR>
+"au FileType go nmap <F6> :GoDef<CR>
 
-let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
-let g:go_highlight_structs = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_build_constraints = 1
-let g:go_fmt_command = "goimports"
+"let g:go_highlight_functions = 1
+"let g:go_highlight_methods = 1
+"let g:go_highlight_structs = 1
+"let g:go_highlight_operators = 1
+"let g:go_highlight_build_constraints = 1
+"let g:go_fmt_command = "goimports"
 
 "Perso
 " Inspired from https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
@@ -163,8 +161,8 @@ endfunction
 "http://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
 "http://codeyarns.com/2011/07/29/vim-set-color-of-colorcolumn/
 ":help ctermbg
-highlight ColorColumn ctermbg=7
-let &colorcolumn="80,".join(range(130,131),",")
+" highlight ColorColumn ctermbg=7
+" let &colorcolumn="80,".join(range(130,131),",")
 
 "Plugin customizations
 " neocomplete.vim
@@ -223,14 +221,14 @@ autocmd VimEnter * if !argc() | NERDTree | endif
 " Close NERDTree if it's the last window buffer opened
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" Based on 'Using with Syntastic' https://github.com/fatih/vim-go
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+"" Syntastic
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"" Based on 'Using with Syntastic' https://github.com/fatih/vim-go
+"let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 "Bundle 'molokai'
 "let g:rehash256 = 1
@@ -289,3 +287,10 @@ function! MarkdownLevel()
 endfunction
 autocmd Filetype markdown setlocal foldexpr=MarkdownLevel()
 autocmd Filetype markdown setlocal foldmethod=expr
+
+" Plugin 'dense-analysis/ale'
+" https://github.com/dense-analysis/ale/tree/master/doc
+let g:ale_dockerfile_hadolint_use_docker = 'yes'
+let g:ale_linters = {'sh': ['bashate'], 'python': ['flake8', 'pylint'], 'dockerfile': ['hadolint']}
+let g:ale_fixers = {'python': ['black']}
+
