@@ -242,6 +242,12 @@ autocmd Filetype markdown setlocal foldmethod=expr
 " Plugin 'dense-analysis/ale'
 " https://github.com/dense-analysis/ale/tree/master/doc
 let g:ale_dockerfile_hadolint_use_docker = 'yes'
-let g:ale_linters = {'sh': ['bashate'], 'python': ['flake8', 'pylint'], 'yaml': ['pylint'], 'dockerfile': ['hadolint']}
+let g:ale_linters = {
+                \ 'sh': ['bashate'],
+                \ 'python': ['flake8', 'pylint'],
+                \ 'yaml': ['pylint'], 'dockerfile': ['hadolint']
+            \ }
 let g:ale_fixers = {'python': ['black']}
+" https://github.com/openstack/bashate
+let g:ale_sh_bashate_options = '-i E006'
 
