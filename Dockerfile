@@ -7,7 +7,7 @@ RUN apt-get update &&\
   apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
 #vim
-COPY material/vimrc /etc/skel/.vimrc
+COPY material/skel      /etc/skel/
 RUN apt-get update &&\
   DEBIAN_FRONTEND=noninteractive apt-get install -qy vim-nox git exuberant-ctags silversearcher-ag &&\
   apt-get clean -y && rm -rf /var/lib/apt/lists/* &&\
@@ -25,7 +25,6 @@ RUN pip install --no-cache-dir --system \
   rm -rvf /tmp/*
 
 #Material
-COPY material/skel      /etc/skel/
 COPY material/scripts   /usr/local/bin/
 COPY material/payload   /opt/payload/
 COPY material/profile.d /etc/profile.d/
