@@ -25,7 +25,8 @@ RUN pip install --no-cache-dir --system \
   rm -rvf /tmp/*
 
 #Material
-COPY material/scripts    /usr/local/bin/
-COPY material/payload    /opt/payload/
-COPY material/profile.d  /etc/profile.d/
+COPY material/skel      /etc/skel/
+COPY material/scripts   /usr/local/bin/
+COPY material/payload   /opt/payload/
+COPY material/profile.d /etc/profile.d/
 
