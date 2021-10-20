@@ -16,7 +16,7 @@ Plugin 'shougo/neocomplete.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'xuyuanp/nerdtree-git-plugin'
-Plugin 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter' "plugin fugitive?
 " Plugin 'scrooloose/syntastic'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'editorconfig/editorconfig-vim'
@@ -32,9 +32,7 @@ Plugin 'junegunn/fzf.vim'
 
 Plugin 'dense-analysis/ale'
 
-" Plugin 'puremourning/vimspector'
-" let g:vimspector_enable_mappings='HUMAN'
-
+Plugin 'ludovicchabant/vim-gutentags'
 
 " Collaborative editing with neovim
 "Plugin 'jbyuti/instant.nvim'
@@ -63,7 +61,7 @@ set background=light
 set showcmd
 set splitbelow
 
-set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
+"set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
 autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit :edit!)."
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 " FileType list found in filetype.vim
@@ -155,7 +153,7 @@ let g:bufferline_echo = 0
 "    Show just the filename
 "let g:airline#extensions#tabline#fnamemod = ':t'
 "   Activate powerline symbols
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 "   https://github.com/vim-airline/vim-airline/wiki/FAQ
 "   http://vim.wikia.com/wiki/256_colors_in_vim
 set t_Co=16

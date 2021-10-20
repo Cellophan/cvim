@@ -9,7 +9,7 @@ RUN apt-get update &&\
 #vim
 COPY material/skel      /etc/skel/
 RUN apt-get update &&\
-  DEBIAN_FRONTEND=noninteractive apt-get install -qy vim-nox git exuberant-ctags silversearcher-ag &&\
+  DEBIAN_FRONTEND=noninteractive apt-get install -qy neovim git exuberant-ctags silversearcher-ag &&\
   apt-get clean -y && rm -rf /var/lib/apt/lists/* &&\
   git clone --depth 1 https://github.com/junegunn/fzf.git /etc/skel/.fzf &&\
   /etc/skel/.fzf/install --bin &&\
