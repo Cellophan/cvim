@@ -249,6 +249,9 @@ let g:ale_fixers = {'python': ['black']}
 " https://github.com/openstack/bashate
 let g:ale_sh_bashate_options = '-i E006'
 
+" Plugin 'ludovicchabant/vim-gutentags'
+let g:gutentags_ctags_tagfile = ".tags"
+
 imap jk <ESC>
 imap kj <ESC>
 
