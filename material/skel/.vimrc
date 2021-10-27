@@ -103,6 +103,8 @@ nnoremap <F4> :noh<CR>
 " nnoremap <F5> :! czsh<CR>
 nnoremap <F5> :term czsh<CR>
 "  spell
+"  https://ostechnix.com/use-spell-check-feature-vim-text-editor/
+set spellfile=./.vim.dict.add
 nnoremap <F6> :call ToggleSpell()<CR>
 function! ToggleSpell()
   set spell!
