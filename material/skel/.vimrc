@@ -167,8 +167,10 @@ nmap <F3> :TagbarToggle<CR>
 " NERDTree
 nmap <F2> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrows = 1
-" Open NERDTree if vim is called without files
-autocmd VimEnter * if !argc() | NERDTree | endif
+" Open NERDTree. If a file is specified, move the cursor to its window.
+" From https://github.com/preservim/nerdtree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
 " Close NERDTree if it's the last window buffer opened
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
