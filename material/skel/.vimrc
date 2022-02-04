@@ -66,6 +66,7 @@ autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit or 
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 " FileType list found in filetype.vim
 autocmd Filetype yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype gitcommit setlocal spell textwidth=72
 
 let mapleader=","
 
