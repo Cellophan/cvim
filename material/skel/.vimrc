@@ -62,7 +62,7 @@ set showcmd
 set splitbelow
 
 "set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
-autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit :edit!)."
+autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit or :e, :edit! or :e!)."
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 " FileType list found in filetype.vim
 autocmd Filetype yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
