@@ -64,9 +64,13 @@ set splitbelow
 "set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
 autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit or :e, :edit! or :e!)."
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
-" FileType list found in filetype.vim
+" FileType list is in filetype.vim
 autocmd Filetype yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+" https://lornajane.net/posts/2018/vim-settings-for-working-with-yaml
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 let mapleader=","
 
