@@ -37,6 +37,10 @@ Plugin 'ludovicchabant/vim-gutentags'
 " Collaborative editing with neovim
 "Plugin 'jbyuti/instant.nvim'
 
+" yode-nvim ???
+" Plugin 'nvim-lua/plenary.nvim'
+" Plugin 'hoschi/yode-nvim'
+
 " All of your Plugins must be added before the following line
 call vundle#end() " required
 filetype plugin indent on " required
@@ -60,6 +64,10 @@ set hlsearch
 set background=light
 set showcmd
 set splitbelow
+
+" set cursorline
+" set cursorcolumn
+
 
 "set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
 autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit or :e, :edit! or :e!)."
@@ -263,4 +271,6 @@ let g:gutentags_ctags_tagfile = ".tags"
 
 imap jk <ESC>
 imap kj <ESC>
+
+" :set showtabline=2
 
