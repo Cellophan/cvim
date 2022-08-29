@@ -267,7 +267,14 @@ let g:ale_fixers = {'python': ['black']}
 let g:ale_sh_bashate_options = '-i E006'
 
 " Plugin 'ludovicchabant/vim-gutentags'
+" https://github.com/ludovicchabant/vim-gutentags/blob/master/doc/gutentags.txt
 let g:gutentags_ctags_tagfile = ".tags"
+let g:gutentags_ctags_exclude = [
+      \ '.ccode', '.vscode',
+      \ '.venv',
+      \ '.tags',
+      \ ]
+
 
 imap jk <ESC>
 imap kj <ESC>
