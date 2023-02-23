@@ -13,7 +13,7 @@ RUN apt-get update &&\
   apt-get clean -y && rm -rf /var/lib/apt/lists/* &&\
   git clone --depth 1 https://github.com/junegunn/fzf.git /etc/skel/.fzf &&\
   /etc/skel/.fzf/install --bin &&\
-  git clone --depth 1 https://github.com/gmarik/Vundle.vim.git /etc/skel/.vim/bundle/Vundle.vim &&\
+  git clone --depth 1 https://github.com/Cellophan/Vundle.vim /etc/skel/.vim/bundle/Vundle.vim &&\
   rm -rf /etc/skel/.vim/bundle/Vundle.vim/.git &&\
   ln -s /etc/skel/.vim /root/ &&\
   vim -u /etc/skel/.vimrc +PluginInstall +qall &&\
