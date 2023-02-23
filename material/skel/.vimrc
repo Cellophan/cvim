@@ -116,6 +116,7 @@ nnoremap <F4> :noh<CR>
 "  my Shell (but can't use set shell because this would break the plugins)
 " nnoremap <F5> :! czsh<CR>
 nnoremap <F5> :term czsh<CR>
+
 "  spell
 "  https://ostechnix.com/use-spell-check-feature-vim-text-editor/
 set spellfile=./.vim.dict.add
@@ -128,6 +129,16 @@ function! ToggleSpell()
     echo "Spellcheck OFF"
   endif
 endfunction
+
+"  Ease the copy/paste
+"     https://jeffkreeftmeijer.com/vim-number/
+nnoremap <F2> :call ToggleLeftParts()<CR>
+function! ToggleLeftParts()
+  " set number! relativenumber!
+  NERDTreeToggle
+  GitGutterSignsToggle
+endfunction
+
 "  From http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
 command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
 function! s:RunShellCommand(cmdline)
@@ -179,7 +190,6 @@ nmap <F3> :TagbarToggle<CR>
 "   :TagbarGetTypeConfig python
 
 " NERDTree
-nmap <F2> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrows = 1
 " Open NERDTree. If a file is specified, move the cursor to its window.
 " From https://github.com/preservim/nerdtree
