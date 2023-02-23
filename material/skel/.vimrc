@@ -61,10 +61,19 @@ filetype plugin indent on " required
 
 "inspired from https://github.com/mbrt/go-docker-dev/blob/master/fs/home/dev/.vimrc
 syn on
-set hlsearch
+set hlsearch           " Highlith the searched patterns by default
+set ignorecase         " When searching
+set showmatch          " Show matching parenthesis
 set background=light
 set showcmd
 set splitbelow
+set scrolloff=3        " Minimum lines to keep above and below cursor
+set scrolljump=1       " Lines to scroll when cursor leaves screen
+set tabstop=4
+set softtabstop=4      " Delete 'indent' with backspace
+set shiftwidth=4       " Identation of 4 spaces
+set expandtab          " Tabs are spaces, not tabes
+set encoding=utf8
 
 " set cursorline
 " set cursorcolumn
@@ -72,14 +81,13 @@ set splitbelow
 
 "set tags=./tags,../tags,../../tags,../../../tags,../../../../tags,./*/tags,tags
 autocmd FileChangedShell * echo "Warning: File changed (for reloading: :edit or :e, :edit! or :e!)."
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+
 " FileType list is in filetype.vim
-autocmd Filetype yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
 " https://lornajane.net/posts/2018/vim-settings-for-working-with-yaml
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 let mapleader=","
 
@@ -92,9 +100,6 @@ nmap <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 nmap <Leader>* :exe "resize " . (heighwidth(0) * 3/2)<CR>
 nmap <Leader>/ :exe "resize " . (heighwidth(0) * 2/3)<CR>
 "  Cherypicked from https://github.com/farazdagi/vim-go-ide/blob/master/vimrc/basic.vim
-"    Ignore case when searching
-set ignorecase
-set encoding=utf8
 "    highlight trailing space
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -102,6 +107,7 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
 "  Mouse toggle
 nnoremap <leader>m :call ToggleMouse()<cr>
 function! ToggleMouse()
