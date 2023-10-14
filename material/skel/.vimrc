@@ -10,7 +10,7 @@ call vundle#begin()
 Plugin 'Cellophan/Vundle.vim'
 
 " Plugin 'fatih/vim-go'
-Plugin 'majutsushi/tagbar'
+" Plugin 'majutsushi/tagbar'
 " Plugin 'fatih/molokai'
 Plugin 'bling/vim-airline'
 Plugin 'shougo/neocomplete.vim'
