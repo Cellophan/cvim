@@ -33,7 +33,7 @@ Plugin 'junegunn/fzf.vim'
 
 Plugin 'dense-analysis/ale'
 
-Plugin 'ludovicchabant/vim-gutentags'
+" Plugin 'ludovicchabant/vim-gutentags'
 
 " Collaborative editing with neovim
 "Plugin 'jbyuti/instant.nvim'
@@ -285,12 +285,12 @@ let g:ale_sh_bashate_options = '-i E006'
 
 " Plugin 'ludovicchabant/vim-gutentags'
 " https://github.com/ludovicchabant/vim-gutentags/blob/master/doc/gutentags.txt
-let g:gutentags_ctags_tagfile = ".tags"
-let g:gutentags_ctags_exclude = [
-      \ '.ccode', '.vscode',
-      \ '.venv',
-      \ '.tags',
-      \ ]
+" let g:gutentags_ctags_tagfile = ".tags"
+" let g:gutentags_ctags_exclude = [
+"       \ '.ccode', '.vscode',
+"       \ '.venv',
+"       \ '.tags',
+"       \ ]
 
 
 imap jk <ESC>
