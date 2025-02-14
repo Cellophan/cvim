@@ -18,11 +18,11 @@ RUN apt-get update &&\
   ln -s /etc/skel/.vim /root/ &&\
   vim -u /etc/skel/.vimrc +PluginInstall +qall &&\
   rm -rvf /tmp/*
-#https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/
-RUN pip install --no-cache-dir \
-      yamllint black flake8 flake8-markdown \
-      bashate &&\
-  rm -rvf /tmp/*
+# #https://ljvmiranda921.github.io/notebook/2018/06/21/precommits-using-black-and-flake8/
+# RUN pip install --no-cache-dir \
+#       yamllint black flake8 flake8-markdown \
+#       bashate &&\
+#   rm -rvf /tmp/*
 
 #Material
 COPY material/scripts   /usr/local/bin/
