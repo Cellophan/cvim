@@ -3,16 +3,19 @@ CONTEXT=$(abspath $(shell pwd))
 IMAGE=$(notdir ${CONTEXT})
 BLAH=${CONTEXT}
 
-
+.PHONY: build
 build:
 	docker build -t ${REGISTRY}/${IMAGE} ${CONTEXT}
-.PHONY: build
 
-build-fresh:
-	docker build --pull -t ${REGISTRY}/${IMAGE} ${CONTEXT}
-.PHONY: build-fresh
+.PHONY: fresh
+fresh:
+	docker build --no-cache -t ${REGISTRY}/${IMAGE} ${CONTEXT}
 
+.PHONY: freshest
+freshest:
+	docker build --pull --no-cache -t ${REGISTRY}/${IMAGE} ${CONTEXT}
+
+.PHONY: push
 push:
 	docker push ${REGISTRY}/${IMAGE}
-.PHONY: push
 
